@@ -67,3 +67,27 @@ sau đó, đẩy lên origin/main
 ```
 git push origin main
 ```
+
+## Nếu không push được là do có sự thay đổi từ remote, điều này xảy ra vì khi làm team, mỗi bên lại code 1 đoạn khác nhau trong local(cụ thể là project trong máy cá nhân). Giả sử A push code lên, thì code trên github so với code trong máy của B là khác nhau. Để đồng bộ nó ta dùng git fetch.
+
+git fetch sẽ tải về các thay đổi từ remote repository.
+
+Dùng git fetch để tải các thay đổi, sau đó merge vào
+
+```
+git fetch
+```
+
+```
+git merge
+```
+
+<image src="github-tutorial/fetchmerge.png"></image>
+
+Trong ảnh là fetch về sau đó merge vào. Màu xanh cho thấy merge success, tức là ko có conflig(xung đột code - vấn đề nan giải khi mỗi thằng code 1 kiểu mà lại code chung files)
+
+Sau đó thì add rồi push như thường
+
+<image src="github-tutorial/pushdone.png"></image>
+
+_(git status để xem status của git)_
