@@ -1,19 +1,21 @@
-#include<iostream>>
+#include<iostream>
 
 void insertionSort(int a[], int n)
 {
     for (int i = 0; i < n - 1; i++)
     {
-        for (int j = n - 1; j > i; j--)
+        int temp = a[i + 1];
+        for (int j = i; j > 0; j--)
         {
-            if(a[i] > a[j])
+            if(a[j] > temp)
             {
-                int temp = a[i];
-                a[i] = a[j];
-                a[i] = temp;
+                a[j+1] = a[j];
+                continue;
             }
-        }
-        
+            
+            a[j+1] = temp;
+            break;
+        }   
     }
 }
 
@@ -28,7 +30,7 @@ void print(int a[], int n)
 
 int main()
 {
-    int a[] = {1,2,3,5,6,67,123,1,2};
+    int a[] = {1,2,31,5,6,67,123,1,2};
     int n = sizeof(a) / sizeof(int);
     insertionSort(a, n);
     print(a, n);
